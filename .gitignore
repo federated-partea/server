@@ -1,0 +1,8 @@
+.idea/
+db/
+venv/
+*.pyc
+*deploy.sh
+data/*
+!data/README.md
+db.sqlite3
