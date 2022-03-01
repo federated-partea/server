@@ -6,3 +6,5 @@ venv/
 data/*
 !data/README.md
 db.sqlite3
+.DS_Store
+setup.cfg
