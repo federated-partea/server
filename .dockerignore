@@ -1,0 +1,6 @@
+.gitignore
+.git
+db.sqlite3
+data
+README.md
+.gitlab-ci.yml
