@@ -3,11 +3,12 @@ db/
 venv/
 *.pyc
 *deploy.sh
-data/*
-!data/README.md
+fed_algo/data/*
+!fed_algo/data/README.md
 db.sqlite3
 .DS_Store
 setup.cfg
 
 fed_algo/__pycache__
 __init__.py
+*.pkl

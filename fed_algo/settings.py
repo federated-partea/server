@@ -32,7 +32,6 @@ ALLOWED_HOSTS = [
     '10.162.163.32',
     'localhost',
     '127.0.0.1',
-    '192.168.0.183'
 ]
 
 # Application definition
@@ -231,6 +230,6 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = None
 
 AUTH_USER_MODEL = 'fed_algo.AppUser'
 
-STORAGE_PATH = './data'
+STORAGE_PATH = 'data'
 STORAGE_MODE = 'file'  # 'file' or 'redis'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
