@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --build-arg SECRET_KEY=${{ secrets.SECRET_KEY }} --file Dockerfile --tag registry.blitzhub.io/partea_server:prod
+        run: docker build . --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --file Dockerfile --tag registry.blitzhub.io/partea_server:prod
 
       - name: Login to Blitzhub
         uses: docker/login-action@v1
