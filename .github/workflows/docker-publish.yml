@@ -35,4 +35,4 @@ jobs:
           tags: registry.blitzhub.io/partea_sever:prod
           secrets: |
             "SECRET_KEY=${{ secrets.SECRET_KEY }}"
-          context: {{defaultContext}}
+          context: "{{defaultContext}}"
