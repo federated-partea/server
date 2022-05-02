@@ -12,7 +12,7 @@ RUN pip3 install -r /usr/src/fed_algo/requirements.txt
 RUN pip3 install gunicorn
 
 COPY ./genenv.py /usr/src/genenv.py
-RUN python /usr/src/genenv.py
+RUN --mount=type=secret,id=SECRET_KEY python /usr/src/genenv.py
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
