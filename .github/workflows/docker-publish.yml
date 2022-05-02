@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: ls -lisa .
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
