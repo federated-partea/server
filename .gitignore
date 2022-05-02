@@ -11,4 +11,3 @@ setup.cfg
 
 fed_algo/__pycache__
 *.pkl
-.env
