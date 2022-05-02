@@ -16,4 +16,4 @@ plotly==5.4.0
 autograd==1.3
 pycryptodome==3.12.0
 filelock
-decouple
+python-decouple
