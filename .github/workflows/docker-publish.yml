@@ -29,4 +29,3 @@ jobs:
           secrets: |
             "SECRET_KEY=${{ secrets.SECRET_KEY }}"
           context: .
-          file: Dockerfile
