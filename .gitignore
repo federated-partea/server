@@ -10,6 +10,5 @@ db.sqlite3
 setup.cfg
 
 fed_algo/__pycache__
-__init__.py
 *.pkl
 .env
