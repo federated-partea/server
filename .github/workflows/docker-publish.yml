@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
 jobs:
 
   build:
@@ -17,16 +14,26 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag registry.blitzhub.io/partea_server:prod
-
       - name: Login to Blitzhub
         uses: docker/login-action@v1
         with:
           registry: registry.blitzhub.io
           username: ${{ secrets.BLITZHUB_USERNAME }}
           password: ${{ secrets.BLITZHUB_PW }}
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: registry.blitzhub.io/partea_sever:prod
+          secrets: |
+            "SECRET_KEY=${{ secrets.SECRET_KEY }}"
+          context: .
+          file: Dockerfile
+
+        run: docker build . --file Dockerfile --tag registry.blitzhub.io/partea_server:prod
+
+
 
       - name: Push to Blitzhub
         run: docker push registry.blitzhub.io/partea_server:prod
