@@ -28,6 +28,9 @@ SECRET_KEY = os.getenv('SECRET', 'tbqjdc0zr-v^l_soumkt%o(pmd$t8n1t3=qu+n!!vlwwcx
 DEBUG = os.environ.get('DEBUG', 0)
 
 ALLOWED_HOSTS = [
+    'partea-api.zbh.uni-hamburg.de',
+    'partea.zbh.uni-hamburg.de',
+    '*.zbh.uni-hamburg.de',
     'exbio.wzw.tum.de',
     '10.162.163.32',
     'localhost',

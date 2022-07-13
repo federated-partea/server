@@ -23,7 +23,7 @@ class Project(models.Model):
     method = models.CharField(max_length=255, choices=METHODS, default='univariate')
     privacy_level = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(20)], default=0)
     number_of_sites = models.IntegerField(default=0)
-    smpc = models.BooleanField(default=False)
+    smpc = models.BooleanField(default=True)
     from_time = models.FloatField(default=0)
     to_time = models.FloatField(default=100)
     step_size = models.FloatField(validators=[MinValueValidator(0.0)], default=1.0)
