@@ -11,3 +11,6 @@ setup.cfg
 
 fed_algo/__pycache__
 *.pkl
+docker-django.env
+
+__pycache__/

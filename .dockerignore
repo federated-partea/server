@@ -4,3 +4,5 @@ db.sqlite3
 data
 README.md
 .gitlab-ci.yml
+__pycache__/
+

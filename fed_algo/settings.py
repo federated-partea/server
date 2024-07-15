@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET', 'tbqjdc0zr-v^l_soumkt%o(pmd$t8n1t3=qu+n!!vlwwcx
 DEBUG = os.environ.get('DEBUG', 0)
 
 ALLOWED_HOSTS = [
-    'apps.cosy.bio', 
+    'apps.cosy.bio',
     'apps.cosy.bio/*',
     'partea-api.zbh.uni-hamburg.de',
     'partea.zbh.uni-hamburg.de',
@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
     '10.162.163.32',
     'localhost',
     '127.0.0.1',
+    '0.0.0.0'
 ]
 
 # Application definition

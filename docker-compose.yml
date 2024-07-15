@@ -1,0 +1,55 @@
+services:
+    web:
+        container_name: partea_frontend
+        image: registry.blitzhub.io/partea_webapp:prod
+        restart: always
+        networks:
+            partea_net:
+                ipv4_address: 172.16.165.2
+        ports:
+            - 8091:80
+        labels:
+            - "com.centurylinklabs.watchtower.enable=true"
+    app:
+        container_name: partea_backend
+        image: registry.blitzhub.io/partea_server:prod
+        env_file:
+            - 'docker-django.env'
+        restart: always
+        ports:
+            - 8093:8000
+        networks:
+            partea_net:
+                ipv4_address: 172.16.165.3
+        depends_on:
+            - db
+        labels:
+            - "com.centurylinklabs.watchtower.enable=true"
+    db:
+        container_name: partea_postgres
+        image: postgres:latest
+        restart: always
+        networks:
+            partea_net:
+                ipv4_address: 172.16.165.4
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_DB=fed_algo
+            - POSTGRES_USER=fed_algo
+            - POSTGRES_PASSWORD=t6278yczAH7rPKVMxaDD
+        command:
+            - "postgres"
+            - "-c"
+            - "max_connections=10000"
+            - "-c"
+            - "shared_buffers=2GB"
+networks:
+    partea_net:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.16.165.0/24
+volumes:
+    postgres_data:
