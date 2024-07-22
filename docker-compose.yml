@@ -1,7 +1,7 @@
 services:
     web:
         container_name: partea_frontend
-        image: spaethju/partea-webapp
+        image: spaethju/partea-webapp:prod
         restart: always
         networks:
             partea_net:
@@ -27,8 +27,7 @@ services:
             - "com.centurylinklabs.watchtower.enable=true"
     db:
         container_name: partea_postgres
-        image: postgres:latest
-        restart: always
+        image: postgres:16.3
         networks:
             partea_net:
                 ipv4_address: 172.16.165.4
