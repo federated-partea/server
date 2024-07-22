@@ -16,3 +16,4 @@ plotly
 autograd
 pycryptodome
 filelock
+setuptools~=70.0.0
