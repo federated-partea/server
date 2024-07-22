@@ -27,7 +27,7 @@ services:
             - "com.centurylinklabs.watchtower.enable=true"
     db:
         container_name: partea_postgres
-        image: postgres:16.3
+        image: postgres:16.3-alpine
         networks:
             partea_net:
                 ipv4_address: 172.16.165.4
