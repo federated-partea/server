@@ -1,7 +1,7 @@
 services:
     web:
         container_name: partea_frontend
-        image: registry.blitzhub.io/partea_webapp:prod
+        image: spaethju/partea-webapp
         restart: always
         networks:
             partea_net:
@@ -12,7 +12,7 @@ services:
             - "com.centurylinklabs.watchtower.enable=true"
     app:
         container_name: partea_backend
-        image: registry.blitzhub.io/partea_server:prod
+        image: spaethju/partea-server:prod
         env_file:
             - 'docker-django.env'
         restart: always
